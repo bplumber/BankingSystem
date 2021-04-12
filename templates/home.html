@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TBP Bank</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+        <header class="navi">
+            <div class="nav">
+              <input type="checkbox">
+                <span></span>
+                <span></span>
+                    <div class="menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cust">View All Customers</a></li>
+                        <li><a href="/trans">Transaction History</a></li>
+                    </div>
+            </div>
+        </header>
+        <main>
+            <section class="hero">
+                <div class="section-inner">
+                    <img src="{% static 'img/logo.jpg' %}" class="profile-img">
+                    <h3>TBP Bank</h3>
+                    <p>TBP Bank Ltd is a fully owned subsidiary of Bank of Sparks . It was headquartered in Mumbai and had 1,874 branches. The bank was founded in 1938 and the Indian government nationalized it in 1969.</p>
+                    <p>Click below to get started</p>
+                    <a href="/cust"><button class="button"><strong>Click Here</strong></button></a>
+
+                </div>
+            </section>
+        </main>
+        <footer>
+            © Copyright TBP Agency, 2021
+        </footer>
+    </body>
+</html>

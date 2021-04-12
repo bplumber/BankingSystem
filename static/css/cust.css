@@ -1,0 +1,102 @@
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #87b7ff ;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #87b7ff;
+}
+.cust{
+	padding: 20px;
+}
+.custo{
+	background-image: url('img/back.png ')
+}
+section {
+       
+    background-size: cover; /* Add this line */
+    background-position: center center; /* Add this line */
+    background-repeat: no-repeat; /* Add this line */
+    background-attachment: fixed; /* Add this line */
+}
+.flex-container {
+    display: flex;
+    text-align: left;
+}
+
+.flex-child {
+    flex: 1;
+    border: 2px solid #87b7ff;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+.details{
+  padding: 10px;
+}
+.damount{
+	display: block;
+	text-align: center;
+	padding-bottom: 20px;
+  padding-top: 10px;;
+}
+.amount{
+	display: inline-block;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+}
+.button {
+  background-color: #87b7ff; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #d6f2ff; 
+  color: black; 
+  border: 2px solid #87b7ff;
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color: #87b7ff;
+  color: white;
+}
+input[type=text] {
+  padding: 5px 5px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 2px solid #87b7ff;
+  border-radius: 4px;
+  background-color:#d6f2ff;
+}
+.mainframe{
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer Details</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/cust.css' %}">
+        <script language="javascript" type="text/javascript">
+          function sshowRow(row)
+          {
+            var x=row.cells;
+            document.getElementById("sacc_num").value = x[0].innerHTML;
+            document.getElementById("sifsc").value = x[1].innerHTML;
+            document.getElementById("sname").value = x[2].innerHTML;
+            document.getElementById("samt").value = x[3].innerHTML;
+          }
+          function rshowRow(row)
+          {
+            var x=row.cells;
+            document.getElementById("racc_num").value = x[0].innerHTML;
+            document.getElementById("rifsc").value = x[1].innerHTML;
+            document.getElementById("rname").value = x[2].innerHTML;
+            document.getElementById("ramt").value = x[3].innerHTML;
+          }
+          {% for message in messages %}
+          alert('{{ message }}');
+          {% endfor %}
+
+          </script>
+    </head>
+
+    <body>
+      <header class="navi">
+        <div class="nav">
+          <input type="checkbox">
+          <span></span>
+          <span></span>
+          <div class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/cust">View All Customers</a></li>
+            <li><a href="/trans">Transaction History</a></li>
+          </div>   
+        </div>
+      </header>
+      <main>
+      <br><br>
+      <section class="custo">
+        <div class="cust">
+          <h2><center>Customer Details</center></h2>
+          <h3>Select a Debiter</h3>
+          <table id="smyTable">
+            <tr>
+              <th>Account Number</th>
+              <th>IFSC Code</th>
+              <th>Name</th>
+              <th>Account Balance</th>
+            </tr>
+            {% for cust in custs %}
+            <tr onclick="javascript:sshowRow(this);">
+              <td class="data">{{ cust.acc_num }}</td>
+              <td class="data">{{ cust.ifsc }}</td>
+              <td class="data">{{ cust.name }}</td>
+              <td class="data">Rs {{ cust.amt }}/-</td>
+            </tr>      
+            {% endfor %}
+          </table>
+        </div>
+      </section>
+      <section class="custo">
+        <div class="cust">
+          <h3>Select a Crediter</h3>
+          <table id="rmyTable">
+            <tr>
+              <th>Account Number</th>
+              <th>IFSC Code</th>
+              <th>Name</th>
+              <th>Account Balance</th>
+            </tr>
+            {% for cust in custs %}
+            <tr onclick="javascript:rshowRow(this);">
+              <td class="data">{{ cust.acc_num }}</td>
+              <td class="data">{{ cust.ifsc }}</td>
+              <td class="data">{{ cust.name }}</td>
+              <td class="data">Rs {{ cust.amt }}/-</td>
+            </tr>
+            {% endfor %}      
+          </table>
+        </div>
+      </section>    
+      <section class="custo">
+        <div class="cust">
+          <h3>Current Transaction</h3> 
+          <div id="current">
+            <center>
+              <form action="{% url 'transaction' %}" method="post" class="amount">
+                {% csrf_token %}
+                <div class="flex-container" >
+                  <div class="flex-child magenta" class="mainframe">
+                    <div class="details"><strong><u>Debiter</u></strong></div>
+                    <div class="details">Name: <input type="text" id="sname"  /></div>
+                    <div class="details">Account Number: <input type="text" id="sacc_num" name="sacc_num"/></div>
+                    <div class="details">IFSC Code: <input type="text" id="sifsc" /></div>
+                    <div class="details">Current Balance: <input type="text" id="samt" /></div>
+                  </div>
+                  <div class="flex-child green" class="mainframe" >
+                    <div class="details"><strong><u>Crediter</u></strong></div>
+                    <div class="details">Name: <input type="text" id="rname" /></div>
+                    <div class="details">Account Number: <input type="text" id="racc_num" name="racc_num"/></div>
+                    <div class="details">IFSC Code: <input type="text" id="rifsc" /></div>
+                    <div class="details">Current Balance: <input type="text" id="ramt"/></div>
+                  </div>
+                </div>
+                <div class="damount">
+                  Amount to be transfered: <input type="text" name="amount" class="bamount"><br><br> 
+                  <input type="submit"  value="Submit" name="Confirm" class="button">
+                </div>
+              </form>
+            </center>
+          </div>
+        </div>  
+      </section>
+      <footer>
+          © Copyright TBP Agency, 2021
+      </footer>
+    </body>
+</html>

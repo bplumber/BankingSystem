@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transactions</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trans.css' %}">
+  </head>
+  <body>
+    <header class="navi">
+      <div class="nav">
+        <input type="checkbox">
+        <span></span>
+        <span></span>
+        <div class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/cust">View All Customers</a></li>
+          <li><a href="/trans">Transaction History</a></li>
+        </div>
+      </div>
+    </header>
+    <br><br>
+    <main>
+    <section class="custo">
+      <div class="cust">
+        <h2><center>Transaction History</center></h2>
+        <table>
+          <tr>
+            <th>Debited from</th>
+            <th>Credited to</th>
+            <th>Amount</th>
+          </tr>
+          {% for tran in trans %}
+          <tr>
+            <td>Name: {{ tran.sname }} | Account Number: {{tran.sacc_num}} </td>
+            <td>Name: {{ tran.rname }} | Account Number: {{tran.racc_num}} </td>
+            <td>Rs {{tran.amt}}/-</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </section>
+    <footer>
+      © Copyright TBP Agency, 2021
+      </footer>
+  </body>
+</html>
