@@ -28,6 +28,7 @@ Cython==0.29.22
 decorator==4.4.2
 defusedxml==0.6.0
 distlib==0.3.1
+dj-database-url==0.5.0
 Django==3.1.7
 dnspython==1.16.0
 # Editable Git install with no remote (droopescan==1.44.1)

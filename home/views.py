@@ -4,7 +4,7 @@ from django.contrib import messages
 
 # Create your views here.
 def home(request):
-    return render(request, "home.html")
+    return render(request, "index.html")
 
 def cust(request):
     custs = Customers.objects.all()
