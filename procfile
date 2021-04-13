@@ -1,1 +1,0 @@
-gunicorn bank.wsgi --log-file -
