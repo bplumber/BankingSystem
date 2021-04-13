@@ -26,7 +26,7 @@ SECRET_KEY = '&i4b8sw!0&g7bju7$&33r=rih8igiy@+(pkci707ev=@wx(s_o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['tbpbank.herokuapp.com']
+ALLOWED_HOSTS = ['tbpagency.herokuapp.com']
 
 
 # Application definition
