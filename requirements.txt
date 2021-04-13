@@ -32,7 +32,7 @@ dj-database-url==0.5.0
 Django==3.1.7
 dnspython==1.16.0
 # Editable Git install with no remote (droopescan==1.44.1)
--e c:\users\plumb\desktop\droopescan-master
+
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0-py3-none-any.whl
 entrypoints==0.3
 fierce==1.4.0
